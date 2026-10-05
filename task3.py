@@ -8,16 +8,14 @@ wait = WebDriverWait(driver, 20)
 
 driver.get("https://www.flipkart.com/login?ret=/")
 
-# Mobile number
 mobile = wait.until(
     EC.element_to_be_clickable(
         (By.CSS_SELECTOR, "input[type='number']")
     )
 )
 
-mobile.send_keys("6281198993")
+mobile.send_keys("9876543210")
 
-# Continue
 continue_btn = wait.until(
     EC.element_to_be_clickable(
         (By.XPATH, "//button[normalize-space()='Continue']")
@@ -26,15 +24,9 @@ continue_btn = wait.until(
 
 continue_btn.click()
 
-# -------------------------
-# OTP from terminal
-# -------------------------
 
 otp = input("Enter verification code: ")
 
-# -------------------------
-# OTP field
-# -------------------------
 
 otp_box = wait.until(
     EC.element_to_be_clickable(
@@ -44,9 +36,6 @@ otp_box = wait.until(
 
 otp_box.send_keys(otp)
 
-# -------------------------
-# Verify / Login
-# -------------------------
 
 verify_btn = wait.until(
     EC.element_to_be_clickable(
@@ -57,7 +46,6 @@ verify_btn = wait.until(
 
 verify_btn.click()
 
-# Browser remains open until YOU press Enter
 input("Press Enter to close the browser...")
 
 driver.quit()
