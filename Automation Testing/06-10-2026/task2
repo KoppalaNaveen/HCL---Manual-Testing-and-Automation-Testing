@@ -1,0 +1,18 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+
+text_box = driver.find_element(By.NAME, "my-text")
+text_box = driver.find_element(By.NAME, "my-password")
+text_box = driver.find_element(By.NAME, "my-textarea")
+
+driver.find_element(By.NAME, "my-text").send_keys("Naveen")
+driver.find_element(By.NAME, "my-password").send_keys("Password123")
+driver.find_element(By.NAME, "my-textarea").send_keys("Learning Selenium")
+
+input("Press Enter to quit........")
+driver.quit()

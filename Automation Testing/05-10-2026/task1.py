@@ -9,7 +9,7 @@ driver.get("https://www.google.com")
 
 search = driver.find_element(By.NAME, "q")
 
-search.send_keys("Bhagyasri bhorse")
+search.send_keys("Actor Suriya")
 search.send_keys(Keys.ENTER)
 
 
